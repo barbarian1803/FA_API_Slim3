@@ -1,0 +1,13 @@
+{
+    "name": "vendor/poentry",
+    "description": "Description of project poentry.",
+    "authors": [
+        {
+            "name": "Bharata",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+        "slim/slim-skeleton":"*"
+    }
+}
