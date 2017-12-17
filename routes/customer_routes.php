@@ -1,11 +1,12 @@
 <?php
 
 require_once $path_to_root.'/sales/includes/db/customers_db.inc';
+require_once $path_to_root.'/sales/includes/db/branches_db.inc';
 require_once $path_to_root.'/includes/db/crm_contacts_db.inc';
 
 require_once 'api/Customer.php';
 
-$customer_acl = new AccessLevel($this->getContainer(),"SA_CUSTOMER");
+$sa_customer_acl = new AccessLevel($this->getContainer(),"SA_CUSTOMER");
 
 $this->group('customer/', function() {
     
@@ -29,4 +30,11 @@ $this->group('customer/', function() {
     
     $this->delete('delete/{id}', \Customer::class . ':delete_customer');
     
-})->add($customer_acl);
+})->add($sa_customer_acl);
+
+$this->group('branch/', function() {
+    
+    $this->get('list{id}', \Customer::class . ':get_customer_list');
+        
+})->add($sa_customer_acl);
+

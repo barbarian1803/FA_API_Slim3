@@ -1,7 +1,5 @@
 <?php
 
-use \Interop\Container\ContainerInterface as ContainerInterface;
-
 class Customer extends RouteClass {
 
     function get_customer_list($request, $response, $args) {
