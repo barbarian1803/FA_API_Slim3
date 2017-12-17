@@ -14,4 +14,8 @@ class RouteClass {
         }
         return $retval;
     }
+    
+    protected function __getpostdata($post, $varname, $default=""){
+        return isset($post[$varname])?$post[$varname]:$default;
+    }
 }

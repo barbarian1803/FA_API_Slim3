@@ -25,8 +25,8 @@ $this->group('customer/', function() {
     
     $this->post('add', \Customer::class . ':add_customer');
     
-    $this->post('update/{id}', \Customer::class . ':update_customer');
+    $this->put('update/{id}', \Customer::class . ':update_customer');
     
-    $this->post('delete/{id}', \Customer::class . ':delete_customer');
+    $this->delete('delete/{id}', \Customer::class . ':delete_customer');
     
 })->add($customer_acl);
